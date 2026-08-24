@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orchidee Bianco — Boutique feminina</title>
+<meta name="description" content="Orchidee Bianco — boutique feminina com consultoria de estilo, ajustes sob medida e atendimento acolhedor. Cuidando de você por inteiro.">
+<meta name="theme-color" content="#0B0B0B">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Orchidee Bianco — Boutique feminina">
+<meta property="og:description" content="Peças que vestem bem, consultoria completa e ajustes com afeto. Cuidando de você por inteiro.">
+<meta property="og:image" content="assets/img/logo.jpg">
+<meta property="og:locale" content="pt_BR">
+
+<link rel="icon" href="assets/img/logo.jpg">
+<link rel="apple-touch-icon" href="assets/img/logo.jpg">
+
+<!-- marca que o JS está ativo: só então as animações de entrada escondem o conteúdo -->
+<script>
+  var raiz = document.documentElement;
+  raiz.classList.add('js');
+  // rede de segurança: se o main.js não rodar em 3s, mostra tudo assim mesmo
+  setTimeout(function () {
+    if (!raiz.classList.contains('js-ok')) raiz.classList.remove('js');
+  }, 3000);
+</script>
+
+<link rel="stylesheet" href="assets/css/styles.css">
+
+<!-- as fontes carregam sem bloquear a página: se o Google Fonts falhar, o site aparece normalmente -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" media="print" onload="this.media='all'"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&family=Parisienne&display=swap">
+<noscript>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&family=Parisienne&display=swap">
+</noscript>
+
+<!--
+  ============================================================
+  AINDA FALTA — procure por "EDITAR:" neste arquivo
+  ------------------------------------------------------------
+  1. E-mail de contato (opcional — está comentado na seção "Visite")
+  2. Bairro/CEP, se quiser detalhar mais o endereço
+  ============================================================
+-->
+
+<!-- Dados estruturados: ajudam o Google a mostrar loja, horário e telefone na busca -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ClothingStore",
+  "name": "Orchidee Bianco",
+  "description": "Boutique feminina com consultoria de estilo, ajustes sob medida e atendimento acolhedor.",
+  "image": "assets/img/logo.jpg",
+  "telephone": "+55-61-99875-8000",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Condomínio Mansões Entrelagos, Etapa 2, Quadra 2, Conjunto 03, Lote 33, Loja 2",
+    "addressLocality": "Brasília",
+    "addressRegion": "DF",
+    "addressCountry": "BR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -15.7410329,
+    "longitude": -47.7543751
+  },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+    "opens": "10:00",
+    "closes": "19:00"
+  }],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "10"
+  },
+  "sameAs": ["https://www.instagram.com/orchidee_bianco/"]
+}
+</script>
+</head>
+<body>
+
+<!-- ORQUÍDEA EM SVG — usada como marca decorativa em várias seções -->
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+  <!-- a espessura do traço vem do CSS (stroke-width é herdado), para cada tamanho de uso -->
+  <symbol id="orchid" viewBox="0 0 200 200">
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <!-- pétalas laterais largas -->
+      <path d="M100,104 C74,96 58,74 60,54 C62,36 80,28 100,30 C120,28 138,36 140,54 C142,74 126,96 100,104 Z" transform="rotate(-68 100 104)"/>
+      <path d="M100,104 C74,96 58,74 60,54 C62,36 80,28 100,30 C120,28 138,36 140,54 C142,74 126,96 100,104 Z" transform="rotate(68 100 104)"/>
+      <!-- sépala dorsal -->
+      <path d="M100,104 C89,88 80,62 84,44 C87,30 94,24 100,24 C106,24 113,30 116,44 C120,62 111,88 100,104 Z"/>
+      <!-- sépalas laterais inferiores -->
+      <path d="M100,104 C90,90 82,68 85,52 C88,38 95,32 100,32 C105,32 112,38 115,52 C118,68 110,90 100,104 Z" transform="rotate(-140 100 104)"/>
+      <path d="M100,104 C90,90 82,68 85,52 C88,38 95,32 100,32 C105,32 112,38 115,52 C118,68 110,90 100,104 Z" transform="rotate(140 100 104)"/>
+      <!-- labelo -->
+      <path d="M100,110 C88,118 82,132 86,143 C89,151 96,153 100,146 C104,153 111,151 114,143 C118,132 112,118 100,110 Z"/>
+      <path d="M91,120 C82,117 76,123 78,132"/>
+      <path d="M109,120 C118,117 124,123 122,132"/>
+      <!-- coluna -->
+      <ellipse cx="100" cy="106" rx="5" ry="7"/>
+    </g>
+  </symbol>
+
+</svg>
+
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<!-- ======================= CABEÇALHO ======================= -->
+<header class="header" id="header">
+  <div class="header__bar">
+    <a class="brand" href="#topo" aria-label="Orchidee Bianco — início">
+      <img class="brand__mark" src="assets/img/logo.jpg" alt="" width="48" height="48">
+      <span class="brand__text">
+        <span class="brand__name">Orchidee</span>
+        <span class="brand__sub">Bianco</span>
+      </span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Navegação principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#cuidado">Nosso cuidado</a>
+      <a href="#colecao">Coleção</a>
+      <a href="#avaliacoes">Avaliações</a>
+      <a href="#visite">Visite</a>
+      <a class="btn btn--ghost nav__cta" href="https://wa.me/5561998758000?text=Oi!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20atendimento." target="_blank" rel="noopener">Fale conosco</a>
+    </nav>
+
+    <button class="burger" id="burger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ======================= HERO ======================= -->
+<main id="conteudo">
+<section class="hero" id="topo">
+  <div class="hero__glow" aria-hidden="true"></div>
+  <svg class="hero__orchid" aria-hidden="true"><use href="#orchid"/></svg>
+
+  <div class="hero__inner">
+    <p class="eyebrow" data-reveal>Boutique feminina</p>
+
+    <h1 class="hero__title" data-reveal>
+      <span class="serif-gold">Orchidee</span>
+      <span class="hero__sub">Bianco</span>
+    </h1>
+
+    <p class="script hero__lema" data-reveal>Cuidando de você por inteiro</p>
+
+    <p class="hero__lead" data-reveal>
+      Peças escolhidas com carinho, consultoria de estilo e ajustes feitos à mão —
+      para que você saia daqui não apenas com um guarda-roupa novo,
+      mas com a autoestima renovada.
+    </p>
+
+    <div class="hero__actions" data-reveal>
+      <a class="btn btn--gold" href="https://wa.me/5561998758000?text=Oi!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20atendimento." target="_blank" rel="noopener">Agende seu atendimento</a>
+      <a class="btn btn--ghost" href="https://www.instagram.com/orchidee_bianco/" target="_blank" rel="noopener">Ver no Instagram</a>
+    </div>
+
+    <p class="hero__rating" data-reveal>
+      <span class="stars" aria-hidden="true">★★★★★</span>
+      <strong>5,0</strong> <span>· 10 avaliações no Google</span>
+    </p>
+  </div>
+
+  <div class="hero__scroll" aria-hidden="true"><span></span></div>
+</section>
+
+<!-- ======================= SOBRE ======================= -->
+<section class="section section--light" id="sobre">
+  <div class="wrap wrap--narrow center">
+    <p class="eyebrow eyebrow--dark" data-reveal>Nosso propósito</p>
+    <h2 class="title" data-reveal>Muito além da venda</h2>
+    <div class="divider" aria-hidden="true" data-reveal>
+        <span></span><svg class="divider__mark"><use href="#orchid"/></svg><span></span>
+      </div>
+
+    <p class="lead" data-reveal>
+      Nosso maior diferencial é o carinho e o cuidado em cada atendimento.
+      Mais do que clientes, vemos <em>mulheres</em> que merecem uma atenção completa
+      para se sentirem sempre lindas e confortáveis.
+    </p>
+    <p class="lead" data-reveal>
+      Um ambiente acolhedor, bem organizado e de decoração charmosa,
+      onde escolher uma peça vira uma experiência tranquila e feliz.
+      Essa confiança é o que nos move.
+    </p>
+  </div>
+</section>
+
+<!-- ======================= PILARES ======================= -->
+<section class="section section--dark" id="cuidado">
+  <div class="wrap">
+    <div class="center">
+      <p class="eyebrow" data-reveal>Cuidando de você por inteiro</p>
+      <h2 class="title title--light" data-reveal>Como cuidamos</h2>
+      <div class="divider divider--gold" aria-hidden="true" data-reveal>
+        <span></span><svg class="divider__mark"><use href="#orchid"/></svg><span></span>
+      </div>
+    </div>
+
+    <div class="pillars">
+      <article class="pillar" data-reveal>
+        <svg class="pillar__icon" aria-hidden="true"><use href="#orchid"/></svg>
+        <h3>Consultoria completa</h3>
+        <p>
+          Ajudamos você a escolher o look, pensar a combinação com peças e acessórios
+          e encontrar a melhor versão do seu estilo.
+        </p>
+      </article>
+
+      <article class="pillar" data-reveal>
+        <svg class="pillar__icon" aria-hidden="true"><use href="#orchid"/></svg>
+        <h3>Ajustes com afeto</h3>
+        <p>
+          Cuidamos pessoalmente das costuras e reparos, porque entendemos a sua
+          necessidade e o que você precisa para o caimento perfeito.
+        </p>
+      </article>
+
+      <article class="pillar" data-reveal>
+        <svg class="pillar__icon" aria-hidden="true"><use href="#orchid"/></svg>
+        <h3>Para todas as horas</h3>
+        <p>
+          Imprevistos acontecem. Estamos sempre prontas para as suas urgências,
+          garantindo a solução ideal mesmo de última hora.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= COLEÇÃO ======================= -->
+<section class="section section--light" id="colecao">
+  <div class="wrap">
+    <div class="center">
+      <p class="eyebrow eyebrow--dark" data-reveal>Na loja</p>
+      <h2 class="title" data-reveal>Nossa coleção</h2>
+      <div class="divider" aria-hidden="true" data-reveal>
+        <span></span><svg class="divider__mark"><use href="#orchid"/></svg><span></span>
+      </div>
+      <p class="lead lead--tight" data-reveal>
+        Peças que vestem bem e se destacam em qualquer evento.
+        Novidades toda semana — acompanhe pelo Instagram.
+      </p>
+    </div>
+
+    <!-- EDITAR: para trocar uma foto, substitua o arquivo em assets/img/
+         mantendo o nome, ou aponte o src para o novo arquivo.
+         Ideal: retrato (3:4 ou 9:16), até ~300 KB. -->
+    <div class="gallery">
+      <figure class="piece" data-reveal>
+        <div class="piece__media">
+          <img src="assets/img/vestidos.jpg" alt="Vestido midi plissado marrom em exposição na loja Orchidee Bianco" loading="lazy" decoding="async">
+        </div>
+        <figcaption><span>Vestidos</span><small>Festa e madrinha</small></figcaption>
+      </figure>
+
+      <figure class="piece" data-reveal>
+        <div class="piece__media">
+          <img src="assets/img/alfaiataria.jpg" alt="Conjunto de alfaiataria em linho marrom — blazer, corselete e calça" loading="lazy" decoding="async">
+        </div>
+        <figcaption><span>Alfaiataria</span><small>Do trabalho ao jantar</small></figcaption>
+      </figure>
+
+      <figure class="piece" data-reveal>
+        <div class="piece__media">
+          <img src="assets/img/dia-a-dia.jpg" alt="Blusa xadrez em tons de coral e azul com colar longo de resina" loading="lazy" decoding="async">
+        </div>
+        <figcaption><span>Dia a dia</span><small>Conforto com elegância</small></figcaption>
+      </figure>
+
+      <figure class="piece" data-reveal>
+        <div class="piece__media">
+          <img src="assets/img/lingerie.jpg" alt="Camisola preta de renda com robe transparente combinando" loading="lazy" decoding="async">
+        </div>
+        <figcaption><span>Lingerie</span><small>Renda e delicadeza</small></figcaption>
+      </figure>
+
+      <figure class="piece" data-reveal>
+        <div class="piece__media">
+          <img src="assets/img/acessorios.jpg" alt="Cintos femininos com fivelas douradas — um de palha e outro laranja com strass" loading="lazy" decoding="async">
+        </div>
+        <figcaption><span>Acessórios</span><small>O detalhe que completa</small></figcaption>
+      </figure>
+    </div>
+
+    <p class="center" data-reveal>
+      <a class="btn btn--dark" href="https://www.instagram.com/orchidee_bianco/" target="_blank" rel="noopener">
+        Ver tudo no Instagram
+      </a>
+    </p>
+  </div>
+</section>
+
+<!-- ======================= AVALIAÇÕES ======================= -->
+<section class="section section--dark" id="avaliacoes">
+  <div class="wrap">
+    <div class="center">
+      <p class="eyebrow" data-reveal>Quem já viveu essa experiência</p>
+      <h2 class="title title--light" data-reveal>Avaliações</h2>
+
+      <div class="score" data-reveal>
+        <span class="score__num serif-gold">5,0</span>
+        <span class="stars stars--lg" aria-hidden="true">★★★★★</span>
+        <span class="score__meta">10 avaliações no Google</span>
+      </div>
+    </div>
+
+    <div class="reviews">
+      <blockquote class="review" data-reveal>
+        <p>
+          Recomendo a butique para quem procura produtos de qualidade e um atendimento
+          excepcional. O ambiente é acolhedor e bem organizado. A decoração é charmosa,
+          tornando a experiência de compras agradável.
+        </p>
+        <footer><span class="stars" aria-hidden="true">★★★★★</span> Cliente no Google</footer>
+      </blockquote>
+
+      <blockquote class="review" data-reveal>
+        <p>
+          Amo ir até essa loja, atendimento simplesmente maravilhoso. Roupas são incríveis.
+          Quer se destacar em qualquer evento? Vá até essa loja e compre as roupas mais lindas —
+          será difícil sair com uma só peça.
+        </p>
+        <footer><span class="stars" aria-hidden="true">★★★★★</span> Cliente no Google</footer>
+      </blockquote>
+
+      <blockquote class="review" data-reveal>
+        <p>
+          As peças são lindas, e vestem muito bem! O atendimento nem preciso dizer… perfeito!
+        </p>
+        <footer><span class="stars" aria-hidden="true">★★★★★</span> Cliente no Google</footer>
+      </blockquote>
+    </div>
+
+    <p class="reviews__note center" data-reveal>
+      “Loja maravilhosa, vendedoras atenciosas e decoração linda!”
+    </p>
+  </div>
+</section>
+
+<!-- ======================= VISITE ======================= -->
+<section class="section section--light" id="visite">
+  <div class="wrap">
+    <div class="center">
+      <p class="eyebrow eyebrow--dark" data-reveal>Venha nos conhecer</p>
+      <h2 class="title" data-reveal>Visite a boutique</h2>
+      <div class="divider" aria-hidden="true" data-reveal>
+        <span></span><svg class="divider__mark"><use href="#orchid"/></svg><span></span>
+      </div>
+    </div>
+
+    <div class="visit">
+      <div class="visit__col" data-reveal>
+        <h3 class="visit__h">Endereço</h3>
+        <p class="visit__p">
+          Condomínio Mansões Entrelagos — Etapa 2<br>
+          Quadra 2, Conjunto 03, Lote 33 — Loja 2<br>
+          Brasília – DF
+        </p>
+        <a class="link-gold" href="https://www.google.com/maps/place/Orchidee+Bianco/@-15.7453665,-47.7592589,15z/data=!4m6!3m5!1s0x935a162fe5fa23f3:0x63c84063c2e6e9cf!8m2!3d-15.7410329!4d-47.7543751!16s%2Fg%2F11krpf13db" target="_blank" rel="noopener">
+          Abrir no Google Maps
+        </a>
+      </div>
+
+      <div class="visit__col" data-reveal>
+        <h3 class="visit__h">Horários</h3>
+        <ul class="hours">
+          <li><span>Segunda a sábado</span><span>10h — 19h</span></li>
+          <li><span>Domingo</span><span>Fechado</span></li>
+        </ul>
+        <p class="visit__note">Atendimento fora do horário para urgências — é só chamar.</p>
+      </div>
+
+      <div class="visit__col" data-reveal>
+        <h3 class="visit__h">Contato</h3>
+        <p class="visit__p">
+          <a class="link-gold" href="https://wa.me/5561998758000?text=Oi!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20atendimento." target="_blank" rel="noopener">WhatsApp (61) 99875-8000</a><br>
+          <a class="link-gold" href="tel:+5561998758000">Ligar: (61) 99875-8000</a>
+          <!-- EDITAR (opcional): e-mail de contato
+          <br><a class="link-gold" href="mailto:contato@orchideebianco.com.br">contato@orchideebianco.com.br</a> -->
+        </p>
+        <p class="visit__p">
+          <a class="link-gold" href="https://www.instagram.com/orchidee_bianco/" target="_blank" rel="noopener">
+            @orchidee_bianco
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div class="cta" data-reveal>
+      <svg class="cta__orchid" aria-hidden="true"><use href="#orchid"/></svg>
+      <p class="script cta__script">Cuidando de você por inteiro</p>
+      <p class="cta__text">
+        Conte o que você procura — um look para um evento, um ajuste ou um presente.
+        Nós cuidamos do resto.
+      </p>
+      <a class="btn btn--gold" href="https://wa.me/5561998758000?text=Oi!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20atendimento." target="_blank" rel="noopener">Falar no WhatsApp</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ======================= RODAPÉ ======================= -->
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <a class="brand brand--footer" href="#topo">
+      <img class="brand__mark" src="assets/img/logo.jpg" alt="" width="56" height="56">
+      <span class="brand__text">
+        <span class="brand__name">Orchidee</span>
+        <span class="brand__sub">Bianco</span>
+      </span>
+    </a>
+
+    <nav class="footer__nav" aria-label="Rodapé">
+      <a href="#sobre">Sobre</a>
+      <a href="#cuidado">Nosso cuidado</a>
+      <a href="#colecao">Coleção</a>
+      <a href="#avaliacoes">Avaliações</a>
+      <a href="#visite">Visite</a>
+      <a href="https://www.instagram.com/orchidee_bianco/" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+
+    <p class="footer__legal">
+      © <span id="ano">2026</span> Orchidee Bianco · Todos os direitos reservados
+    </p>
+  </div>
+</footer>
+
+<a class="float-wa" href="https://wa.me/5561998758000?text=Oi!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20atendimento." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+    <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.22 8.22 0 0 1-1.26-4.36c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.2 8.2 0 0 1 2.41 5.83c0 4.54-3.7 8.21-8.24 8.21Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.47c-.16 0-.43.06-.65.31-.22.25-.85.83-.85 2.03s.87 2.35.99 2.51c.12.16 1.71 2.61 4.14 3.66.58.25 1.03.4 1.38.51.58.19 1.11.16 1.53.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.17-.47-.29Z"/>
+  </svg>
+</a>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

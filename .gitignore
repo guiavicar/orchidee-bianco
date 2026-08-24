@@ -1,0 +1,8 @@
+# fotos originais (backup local) — o site usa as cópias em assets/img/
+orchidee_images/
+354631811_*.jpg
+
+# lixo de sistema
+.DS_Store
+Thumbs.db
+*~
