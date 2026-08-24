@@ -1,5 +1,7 @@
 # Orchidee Bianco — site institucional
 
+**No ar:** https://guiavicar.github.io/orchidee-bianco/
+
 Site de página única, estático (HTML + CSS + JS puro, sem build e sem dependências).
 Paleta preta, dourada e branca, com orquídea em traço dourado como marca decorativa.
 
@@ -99,9 +101,22 @@ por JavaScript atrás de login — um script simples recebe só o título. As op
 4. **API oficial da Meta** — a Basic Display API foi desativada no fim de 2024; hoje exige
    conta Business/Creator, app na Meta e renovação de token. Trabalhoso demais para o caso.
 
-## Publicar
+## Publicar alterações
 
-Por ser um site estático, pode ir para qualquer hospedagem gratuita:
-Netlify, Vercel, GitHub Pages ou Cloudflare Pages — é só arrastar a pasta.
-Depois vale cadastrar o endereço do site no perfil do Google
-(o card da loja hoje está com o campo "Adicionar website" vazio) e na bio do Instagram.
+O site está no GitHub Pages, servido a partir da branch `main` (pasta raiz).
+Para atualizar, é só commitar e enviar — o Pages reconstrói sozinho em cerca de um minuto:
+
+```bash
+git add -A
+git commit -m "descrição da mudança"
+git push
+```
+
+Conferir o status do build: `gh api repos/guiavicar/orchidee-bianco/pages --jq .status`
+
+### Próximos passos fora do código
+
+- Cadastrar https://guiavicar.github.io/orchidee-bianco/ no perfil do Google da loja
+  (o campo "Adicionar website" está vazio hoje) e na bio do Instagram
+- Se um dia quiser domínio próprio (ex.: orchideebianco.com.br), dá para apontar
+  para o Pages: cria-se um arquivo `CNAME` na raiz e ajustam-se os DNS do domínio
